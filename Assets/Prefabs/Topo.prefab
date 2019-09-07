@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7973426513332052819}
   - component: {fileID: 7973426513332052817}
   - component: {fileID: 7973426513332052822}
+  - component: {fileID: 3076367925082916543}
   m_Layer: 0
   m_Name: Topo
   m_TagString: Untagged
@@ -120,3 +121,17 @@ PlayableDirector:
     value: {fileID: 7973426513332052817}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &3076367925082916543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7973426513332052818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ac268fdd54afe4eb8058c963a79ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 1
+  animator: {fileID: 7973426513332052817}

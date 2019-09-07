@@ -472,7 +472,7 @@ MonoBehaviour:
   topoPrefab: {fileID: 7973426513332052818, guid: 7c808fef83708494eb68d43ed6c943d7,
     type: 3}
   player: {fileID: 660386204}
-  spawnVerticalOffset: 0.037
+  spawnVerticalOffset: 0.155
 --- !u!4 &766211725
 Transform:
   m_ObjectHideFlags: 0
