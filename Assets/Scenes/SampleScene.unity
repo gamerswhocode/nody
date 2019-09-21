@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dadeed53f4f7fa14f851aa989aea082b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 453597447}
+  SpriteToRender: {fileID: 453597447}
 --- !u!212 &453597447
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -267,7 +267,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.400805
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

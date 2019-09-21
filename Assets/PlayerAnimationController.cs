@@ -1,22 +1,30 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAnimationController : MonoBehaviour
 {
     public Animator animator;
+
+    private const string MOVING_STATE = "Moving";
+    private const string IDLE_STATE = "Idle";
     // Update is called once per frame
     void Update()
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        float playerHorizontalAxisValue = Input.GetAxis("Horizontal");
+        float playerVerticalAxisValue = Input.GetAxis("Vertical");
 
-        if (h == 0 && v == 0)
-        {
-            animator.Play("Idle");
-        } else
-        {
-            animator.Play("Moving");
-        }
+        Func<bool> isPlayerMoving = () => (playerHorizontalAxisValue != 0 || playerVerticalAxisValue != 0);
+
+        string playerState = isPlayerMoving() ? MOVING_STATE : IDLE_STATE;
+        animator.Play(playerState);
+        //if (isPlayerMoving())
+        //{
+        //    animator.Play("Idle");
+        //} else
+        //{
+        //    animator.Play("Moving");
+        //}
     }
 }

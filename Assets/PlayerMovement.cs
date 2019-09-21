@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private const string HORIZONTAL_AXIS = "Horizontal";
+    private const string VERTICAL_AXIS = "Vertical";
+
     public Transform playerTransform;
     [Range(0,0.5f)]
     public float speed;
@@ -16,11 +19,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        float playerHorizontalAxisValue = Input.GetAxis(HORIZONTAL_AXIS);
+        float playerVerticalAxisValue = Input.GetAxis(VERTICAL_AXIS);
 
-        Vector3 movement = new Vector3(h * speed, v * speed, 0);
+        const float zDepth = 0.0f;
+        Vector3 newMovementPosition = new Vector3(playerHorizontalAxisValue * speed, playerVerticalAxisValue * speed, zDepth);
 
-        playerTransform.position = playerTransform.position + movement;
+        playerTransform.position += newMovementPosition;
     }
 }

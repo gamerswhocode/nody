@@ -3,28 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FullScreenResizer : MonoBehaviour
-{
-    public SpriteRenderer spriteRenderer;
+{    
     private Sprite sprite;
+
+    public SpriteRenderer SpriteToRender;
+    
     // Start is called before the first frame update
     void Start()
     {
-        sprite = spriteRenderer.sprite;
+        sprite = SpriteToRender.sprite;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float width = sprite.bounds.size.x;
-        float height = sprite.bounds.size.y;
+        Vector3 spriteSize = sprite.bounds.size;        
+        float width = spriteSize.x;
+        float height = spriteSize.y;
 
-        float worldScreenHeight = (float)(Camera.main.orthographicSize * 2.0);
-        float worldScreenWidth = (float)(worldScreenHeight / Screen.height * Screen.width);
+        const float screenDoubleSize = 2.0f;
 
-        Vector2 sizeX = new Vector2(worldScreenWidth / width, transform.localScale.y);
-        transform.localScale = sizeX;
+        float worldScreenHeight = Camera.main.orthographicSize * screenDoubleSize;
+        float worldScreenWidth = worldScreenHeight / Screen.height * Screen.width;
 
-        Vector2 sizeY = new Vector2(transform.localScale.x, worldScreenHeight / height);
-        transform.localScale = sizeY;
+        //Vector2 sizeX = new Vector2(worldScreenWidth / width, transform.localScale.y);
+        //transform.localScale = sizeX;
+
+        //Vector2 sizeY = new Vector2(transform.localScale.x, worldScreenHeight / height);
+        //transform.localScale = sizeY;
     }
 }
