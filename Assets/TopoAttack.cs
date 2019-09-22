@@ -9,7 +9,7 @@ public class TopoAttack : MonoBehaviour
 
     private Transform player;
     private bool topoSpawned = false;
-    
+
 
     private void Start()
     {
@@ -19,22 +19,22 @@ public class TopoAttack : MonoBehaviour
     {
         topoSpawned = true;
     }
-    void Update()
-    {
-        if (!topoSpawned) return;
 
-        // Get distance to player
-        Vector3 directionVector = player.position - transform.position;
-        float distance = directionVector.magnitude;
-        if (distance <= attackRange)
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        // Debug.Log("StartOnTriggerStay2D");
+        // Debug.Log("StartOnTriggerStay2D");
+        if (!topoSpawned) return;
+        if (collision.gameObject.CompareTag("Player"))
         {
             if (animator.GetCurrentAnimatorStateInfo(0).IsName("TopoIdle"))
             {
                 animator.Play("TopoAttack");
             }
         }
-
+        //Debug.Log("EndOnTriggerStay2D");
     }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;

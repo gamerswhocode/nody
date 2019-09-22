@@ -19,12 +19,5 @@ public class PlayerAnimationController : MonoBehaviour
 
         string playerState = isPlayerMoving() ? MOVING_STATE : IDLE_STATE;
         animator.Play(playerState);
-        //if (isPlayerMoving())
-        //{
-        //    animator.Play("Idle");
-        //} else
-        //{
-        //    animator.Play("Moving");
-        //}
     }
 }
