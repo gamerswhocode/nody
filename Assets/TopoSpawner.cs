@@ -15,7 +15,7 @@ public class TopoSpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(WaitForTopoSpawn());
-        NumberOfTopsInLevel = 5;
+        NumberOfTopsInLevel = 4;
         //Instantiate(topoPrefab, player.position + Vector3.down * spawnVerticalOffset, Quaternion.identity);
     }
     private IEnumerator WaitForTopoSpawn()

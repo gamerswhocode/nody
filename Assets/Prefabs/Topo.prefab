@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 749476280}
   m_Layer: 0
   m_Name: Topo
-  m_TagString: Untagged
+  m_TagString: Mole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,5 +176,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7973426513332052817}
-  playerInvencibility: {fileID: 0}
   invencibilityTimeInSeconds: 2
